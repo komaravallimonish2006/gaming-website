@@ -42,9 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const session = getCurrentSession();
   const currentPage = window.location.pathname.split('/').pop() || '';
 
-  if (session && (currentPage === 'login.html' || currentPage === 'register.html')) {
+  if (session && (currentPage === 'login.html' || currentPage === 'register.html' || currentPage === 'login' || currentPage === 'register')) {
     // Show active session alert
-    const card = document.querySelector('.auth-card');
+    const card = document.getElementById('auth-card') || document.querySelector('.auth-card');
     if (card) {
       const banner = document.createElement('div');
       banner.style.cssText = 'background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); border-radius: 12px; padding: 12px; margin-bottom: 20px; font-size: 13px; color: #00f0ff; text-align: center;';

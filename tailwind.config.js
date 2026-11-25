@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
+    "./*.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
@@ -12,7 +12,8 @@ export default {
         'accent-purple': '#b026ff',
       },
       fontFamily: {
-        sans: ['Outfit', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Orbitron', 'sans-serif'],
       },
     },
   },

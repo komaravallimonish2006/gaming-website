@@ -52,13 +52,13 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 text-gray-400">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 hover:text-white transition-colors" aria-label="GitHub">
-                <i class="fa-brands fa-github text-sm"></i>
+                <i className="fa-brands fa-github text-sm"></i>
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 hover:text-white transition-colors" aria-label="Twitter">
-                <i class="fa-brands fa-x-twitter text-sm"></i>
+                <i className="fa-brands fa-x-twitter text-sm"></i>
               </a>
               <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 hover:text-white transition-colors" aria-label="Discord">
-                <i class="fa-brands fa-discord text-sm"></i>
+                <i className="fa-brands fa-discord text-sm"></i>
               </a>
             </div>
           </div>
