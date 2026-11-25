@@ -1,0 +1,30 @@
+Project Name: nexus-gaming
+
+Dependencies:
+- clsx (^2.1.1)
+- framer-motion (^13.2.0)
+- hls.js (^1.4.12)
+- lucide-react (^1.45.0)
+- react (^18.2.0)
+- react-dom (^18.2.0)
+- tailwind-merge (^3.7.0)
+
+Dev Dependencies:
+- @types/react (^18.2.15)
+- @types/react-dom (^18.2.7)
+- @vitejs/plugin-react (^4.0.3)
+- autoprefixer (^10.6.0)
+- postcss (^8.5.28)
+- tailwindcss (^3.4.19)
+- vite (^4.4.5)
+
+How to Run the Project:
+1. Open your terminal in this project directory (c:\Users\monis\OneDrive\Desktop\Gaming-Website).
+2. Install the dependencies by running:
+   npm install
+3. Start the development server by running:
+   npm run dev
+4. Open the local URL provided in the terminal (usually http://localhost:5173) in your browser.
+
+To build the project for production, run:
+npm run build

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Nexus Gaming</title>
+    <meta name="description" content="Nexus Gaming Privacy Policy. Learn how we handle session data, Auth0 identity tokens, and respect player privacy without third-party tracking.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon & Styles -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-[#070b19] text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute inset-0 cyber-grid opacity-20"></div>
+    </div>
+
+    <div id="navbar-root"></div>
+    <script type="module" src="/src/navbar-mount.tsx"></script>
+
+    <main class="relative z-10 flex-1 max-w-4xl mx-auto px-6 pt-36 pb-24">
+        <div class="bg-[#0c1128]/85 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-[0_0_80px_rgba(0,0,0,0.8)]">
+            <span class="text-xs font-mono text-accent-blue uppercase tracking-widest block mb-2">Legal Compliance</span>
+            <h1 class="text-3xl md:text-5xl font-black text-white mb-6">Privacy Policy</h1>
+            <p class="text-xs text-gray-400 mb-8 font-mono">Effective Date: November 25, 2026 • Version 2.4</p>
+
+            <div class="space-y-6 text-sm text-gray-300 leading-relaxed font-light">
+                <section>
+                    <h2 class="text-lg font-bold text-white mb-2 font-mono">1. Zero Ad-Tracker Commitment</h2>
+                    <p>At Nexus Gaming, we prioritize player privacy above all else. We do not sell, rent, or trade your personal data. We do not integrate invasive third-party ad networks or behavioral profiling scripts.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-lg font-bold text-white mb-2 font-mono">2. Identity Authentication via Auth0</h2>
+                    <p>When you sign up or log in, authentication is powered by Auth0 (Okta). We only store your public profile name, email, and security identifier to keep your cloud progress and game scores synchronized. Sensitive credentials and passwords are encrypted and processed exclusively within Auth0's secure infrastructure.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-lg font-bold text-white mb-2 font-mono">3. Local Storage & Cookies</h2>
+                    <p>We use browser LocalStorage and essential session cookies strictly for gameplay state (high scores, audio preferences, active session tokens, and cookie consent preferences). You may clear this data at any time through your browser settings.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-lg font-bold text-white mb-2 font-mono">4. Security & Rate Limiting</h2>
+                    <p>To defend the arena against denial-of-service and bot attacks, our systems monitor request velocity and enforce token-bucket rate limits (HTTP 429). Anomaly logs contain no personally identifiable data and are retained purely for diagnostic stability.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-lg font-bold text-white mb-2 font-mono">5. Contact & Data Deletion</h2>
+                    <p>If you wish to delete your operative handle and associated game history, transmit a request via our <a href="/contact.html" class="text-accent-blue underline">Transmission Center</a>.</p>
+                </section>
+            </div>
+
+            <div class="mt-12 pt-6 border-t border-white/10 flex items-center justify-between">
+                <a href="/" class="text-xs font-bold text-accent-blue hover:underline">&larr; Return to Nexus Central</a>
+                <span class="text-xs text-gray-500 font-mono">GDPR & CCPA Compliant</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="relative z-10 py-6 text-center text-xs text-gray-500 border-t border-white/5">
+        &copy; 2026 Nexus Gaming. All rights reserved.
+    </footer>
+</body>
+</html>

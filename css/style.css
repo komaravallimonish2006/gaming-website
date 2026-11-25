@@ -1,0 +1,503 @@
+/* =========================================
+   NEXUS GAMING - MAIN STYLESHEET
+   ========================================= */
+
+:root {
+    /* Color Palette */
+    --bg-dark: #0a0a0f;
+    --primary-neon: #00f0ff;
+    --secondary-neon: #ff003c;
+    --accent-purple: #7000ff;
+    --text-main: #f0f0f0;
+    --text-muted: #a0a0b0;
+    
+    /* Glassmorphism */
+    --glass-bg: rgba(20, 20, 30, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-blur: blur(12px);
+
+    /* Fonts */
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   BACKGROUND VIDEO
+   ========================================= */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: brightness(0.6) contrast(1.2);
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(12, 17, 40, 0.8), rgba(12, 17, 40, 0.95));
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Premium Animated Cyberpunk Background */
+.video-overlay::before,
+.video-overlay::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(0, 240, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(176, 38, 255, 0.15) 0%, transparent 40%);
+    z-index: -1;
+    animation: rotateBackground 30s linear infinite;
+}
+
+.video-overlay::after {
+    background: radial-gradient(circle at 20% 80%, rgba(0, 240, 255, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at center, rgba(176, 38, 255, 0.1) 0%, transparent 50%);
+    animation: rotateBackground 45s linear infinite reverse;
+}
+
+@keyframes rotateBackground {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* =========================================
+   NAVIGATION (GLASSMORPHISM)
+   ========================================= */
+.glass-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.2rem 0;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.glass-navbar:hover {
+    background: rgba(30, 30, 45, 0.6);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary-neon);
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-neon);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-neon);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px var(--primary-neon);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-neon);
+    color: var(--bg-dark);
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--glass-border);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary-neon);
+    color: var(--primary-neon);
+    background: rgba(0, 240, 255, 0.05);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--secondary-neon);
+    border: 1px solid var(--secondary-neon);
+    box-shadow: inset 0 0 0 0 var(--secondary-neon);
+}
+
+.btn-secondary:hover {
+    box-shadow: inset 0 -3rem 0 0 var(--secondary-neon);
+    color: white;
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+    margin-top: 4rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.glitch-text {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    position: relative;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+/* Glitch Animation */
+.glitch-text::before, .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--secondary-neon);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--primary-neon);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(21px, 9999px, 86px, 0); }
+    20% { clip: rect(61px, 9999px, 30px, 0); }
+    40% { clip: rect(100px, 9999px, 12px, 0); }
+    60% { clip: rect(55px, 9999px, 81px, 0); }
+    80% { clip: rect(3px, 9999px, 20px, 0); }
+    100% { clip: rect(44px, 9999px, 60px, 0); }
+}
+
+@keyframes glitch-anim2 {
+    0% { clip: rect(89px, 9999px, 10px, 0); }
+    20% { clip: rect(12px, 9999px, 80px, 0); }
+    40% { clip: rect(76px, 9999px, 2px, 0); }
+    60% { clip: rect(23px, 9999px, 55px, 0); }
+    80% { clip: rect(60px, 9999px, 30px, 0); }
+    100% { clip: rect(15px, 9999px, 70px, 0); }
+}
+
+/* =========================================
+   FEATURED GAMES SECTION
+   ========================================= */
+.featured-games {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-purple);
+    margin: 1rem auto 0;
+    box-shadow: 0 0 10px var(--accent-purple);
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(112,0,255,0.3);
+    border-color: rgba(112,0,255,0.5);
+}
+
+.card-image {
+    height: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.glass-card:hover .card-image {
+    transform: scale(1.1);
+}
+
+.ttt-bg {
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
+}
+
+.chess-bg {
+    background: linear-gradient(45deg, #2b2b2b, #111);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: rgba(255,255,255,0.8);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover .card-overlay {
+    color: var(--primary-neon);
+    text-shadow: 0 0 20px var(--primary-neon);
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.card-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   ANIMATIONS UTILITIES
+   ========================================= */
+.animate-on-load {
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    will-change: opacity, transform;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide-in-left.is-visible {
+    animation: slideInLeft 0.8s forwards;
+}
+
+.zoom-in.is-visible {
+    animation: zoomIn 0.8s forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 768px) {
+    .glitch-text {
+        font-size: 2.8rem;
+    }
+    .nav-links {
+        display: none; /* In a real app, you'd add a hamburger menu */
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+}

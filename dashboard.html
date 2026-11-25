@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Arena & Dashboard | Nexus Gaming</title>
+    <meta name="description" content="Explore the full Nexus Gaming library. Play retro Snake, Grandmaster Chess, 2048, Neon Tic-Tac-Toe, Pong, Sudoku, Wordle, and more directly in your browser.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Games Arena & Catalog | Nexus Gaming">
+    <meta property="og:description" content="10+ hand-crafted browser retro games with zero latency, hardware acceleration, and cloud saves.">
+    <meta property="og:image" content="/images/og-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/images/og-preview.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-[#070b19] text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
+    <!-- Futuristic Ambient Background -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute inset-0 cyber-grid opacity-20"></div>
+        <div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-accent-blue/5 rounded-full blur-[140px]"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-purple-600/5 rounded-full blur-[140px]"></div>
+    </div>
+
+    <!-- Navigation Root -->
+    <div id="navbar-root"></div>
+    <script type="module" src="/src/navbar-mount.tsx"></script>
+
+    <!-- Main Content -->
+    <main class="relative z-10 flex-1 max-w-7xl mx-auto px-4 md:px-6 pt-32 pb-24 w-full">
+        
+        <!-- Header & Stats Bar -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-white/10 pb-8">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-blue/10 border border-accent-blue/20 text-accent-blue text-xs font-mono uppercase tracking-widest mb-3">
+                    <i class="fa-solid fa-gamepad"></i> Hardware-Accelerated Arcade
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white">
+                    GAMES ARENA
+                </h1>
+                <p class="text-gray-400 mt-2 text-sm md:text-base max-w-xl">
+                    Select any terminal below to launch zero-latency gameplay directly in your browser.
+                </p>
+            </div>
+
+            <!-- Fast Stats -->
+            <div class="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4">
+                <div class="px-3 border-r border-white/10">
+                    <span class="block text-2xl font-black text-accent-blue">10</span>
+                    <span class="text-[11px] font-mono text-gray-400 uppercase">Games Active</span>
+                </div>
+                <div class="px-3 border-r border-white/10">
+                    <span class="block text-2xl font-black text-emerald-400">60</span>
+                    <span class="text-[11px] font-mono text-gray-400 uppercase">FPS Engine</span>
+                </div>
+                <div class="px-3">
+                    <span class="block text-2xl font-black text-purple-400">0</span>
+                    <span class="text-[11px] font-mono text-gray-400 uppercase">Ads / Popups</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Games Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            
+            <!-- Neon Tic-Tac-Toe -->
+            <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                <div class="h-48 overflow-hidden relative">
+                    <img 
+                        src="/images/tictactoe.png" 
+                        alt="Neon Tic-Tac-Toe Arcade Game"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                    >
+                    <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-mono uppercase tracking-wider text-accent-blue border border-white/10">
+                        2 Player Local
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-black text-white mb-2">Neon Tic-Tac-Toe</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            Classic Xs and Os reimagined with neon glow effects, audio feedback, and score counters.
+                        </p>
+                    </div>
+                    <a href="/tictactoe.html" class="w-full py-3 px-5 rounded-xl bg-white/10 hover:bg-white text-center text-xs font-bold text-white hover:text-black transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(0,240,255,0.3)]">
+                        Play Terminal <i class="fa-solid fa-play text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Grandmaster Chess -->
+            <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                <div class="h-48 overflow-hidden relative">
+                    <img 
+                        src="/images/chess.png" 
+                        alt="Grandmaster Chess Board Game"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                    >
+                    <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-mono uppercase tracking-wider text-purple-400 border border-white/10">
+                        Strategy
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-black text-white mb-2">Grandmaster Chess</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            The timeless game of kings. Play against a friend locally with turn indicators and legal move tracking.
+                        </p>
+                    </div>
+                    <a href="/chess.html" class="w-full py-3 px-5 rounded-xl bg-white/10 hover:bg-white text-center text-xs font-bold text-white hover:text-black transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(157,78,221,0.3)]">
+                        Play Terminal <i class="fa-solid fa-play text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Retro Snake -->
+            <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                <div class="h-48 overflow-hidden relative">
+                    <img 
+                        src="/images/snake.png" 
+                        alt="Retro Snake Arcade Game"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                    >
+                    <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-mono uppercase tracking-wider text-emerald-400 border border-white/10">
+                        Arcade Classic
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-black text-white mb-2">Retro Snake</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            The quintessential arcade challenge. Eat cyber-orbs, grow your length, and dominate your personal best.
+                        </p>
+                    </div>
+                    <a href="/snake.html" class="w-full py-3 px-5 rounded-xl bg-white/10 hover:bg-white text-center text-xs font-bold text-white hover:text-black transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(52,211,153,0.3)]">
+                        Play Terminal <i class="fa-solid fa-play text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2048 Logic -->
+            <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                <div class="h-48 overflow-hidden relative">
+                    <img 
+                        src="/images/2048.png" 
+                        alt="2048 Number Puzzle Game"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                    >
+                    <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-mono uppercase tracking-wider text-amber-400 border border-white/10">
+                        Brain Puzzle
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-black text-white mb-2">2048 Logic</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            Slide tiles, merge matching numbers, and test your mathematical calculation to reach the 2048 tile.
+                        </p>
+                    </div>
+                    <a href="/2048.html" class="w-full py-3 px-5 rounded-xl bg-white/10 hover:bg-white text-center text-xs font-bold text-white hover:text-black transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(251,191,36,0.3)]">
+                        Play Terminal <i class="fa-solid fa-play text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pong Classic -->
+            <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                <div class="h-48 overflow-hidden relative">
+                    <img 
+                        src="/images/pong.png" 
+                        alt="Classic Pong 2 Paddle Game"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                    >
+                    <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-mono uppercase tracking-wider text-cyan-400 border border-white/10">
+                        Multiplayer
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-black text-white mb-2">Cyber Pong</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            The original digital showdown. Twin paddles, variable physics speed, and intense local rally play.
+                        </p>
+                    </div>
+                    <a href="/pong.html" class="w-full py-3 px-5 rounded-xl bg-white/10 hover:bg-white text-center text-xs font-bold text-white hover:text-black transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(0,240,255,0.3)]">
+                        Play Terminal <i class="fa-solid fa-play text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Flappy Bird Clone -->
+            <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                <div class="h-48 overflow-hidden relative">
+                    <img 
+                        src="/images/flappy.png" 
+                        alt="Flappy Bird Arcade Physics"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                    >
+                    <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-mono uppercase tracking-wider text-yellow-400 border border-white/10">
+                        Precision
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-black text-white mb-2">Flappy Physics</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            One-tap physics arcade challenge. Time your altitude perfectly to clear high-voltage cyber obstacles.
+                        </p>
+                    </div>
+                    <a href="/flappy.html" class="w-full py-3 px-5 rounded-xl bg-white/10 hover:bg-white text-center text-xs font-bold text-white hover:text-black transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(250,204,21,0.3)]">
+                        Play Terminal <i class="fa-solid fa-play text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dino Runner -->
+            <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                <div class="h-48 overflow-hidden relative">
+                    <img 
+                        src="/images/dino.png" 
+                        alt="Endless Dino Runner Game"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                    >
+                    <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-mono uppercase tracking-wider text-red-400 border border-white/10">
+                        Endless Runner
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-black text-white mb-2">Dino Runner</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            Speed continuously ramps up. Jump and duck over hazards to climb the global leaderboard.
+                        </p>
+                    </div>
+                    <a href="/dino.html" class="w-full py-3 px-5 rounded-xl bg-white/10 hover:bg-white text-center text-xs font-bold text-white hover:text-black transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(248,113,113,0.3)]">
+                        Play Terminal <i class="fa-solid fa-play text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Memory Match -->
+            <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                <div class="h-48 overflow-hidden relative">
+                    <img 
+                        src="/images/memory.png" 
+                        alt="Memory Card Matching Game"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                    >
+                    <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-mono uppercase tracking-wider text-pink-400 border border-white/10">
+                        Cognitive
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-black text-white mb-2">Memory Match</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            Flip cards to discover identical cyber glyphs. Test your short-term spatial and pattern memory.
+                        </p>
+                    </div>
+                    <a href="/memory.html" class="w-full py-3 px-5 rounded-xl bg-white/10 hover:bg-white text-center text-xs font-bold text-white hover:text-black transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(244,114,182,0.3)]">
+                        Play Terminal <i class="fa-solid fa-play text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sudoku -->
+            <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                <div class="h-48 overflow-hidden relative">
+                    <img 
+                        src="/images/sudoku.png" 
+                        alt="Sudoku Logic Grid Puzzle"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                    >
+                    <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-mono uppercase tracking-wider text-indigo-400 border border-white/10">
+                        Logic Grid
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-black text-white mb-2">Sudoku Master</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            The ultimate Japanese number puzzle. Fill every 9x9 grid with unique digits without repetition.
+                        </p>
+                    </div>
+                    <a href="/sudoku.html" class="w-full py-3 px-5 rounded-xl bg-white/10 hover:bg-white text-center text-xs font-bold text-white hover:text-black transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(129,140,248,0.3)]">
+                        Play Terminal <i class="fa-solid fa-play text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Wordle -->
+            <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                <div class="h-48 overflow-hidden relative">
+                    <img 
+                        src="/images/wordle.png" 
+                        alt="Wordle Word Guessing Puzzle"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                    >
+                    <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-mono uppercase tracking-wider text-teal-400 border border-white/10">
+                        Word Puzzle
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-black text-white mb-2">Wordle Matrix</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                            Guess the 5-letter hidden codeword in 6 attempts with color-coded positional deduction.
+                        </p>
+                    </div>
+                    <a href="/wordle.html" class="w-full py-3 px-5 rounded-xl bg-white/10 hover:bg-white text-center text-xs font-bold text-white hover:text-black transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(45,212,191,0.3)]">
+                        Play Terminal <i class="fa-solid fa-play text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="relative z-10 py-8 text-center text-xs text-gray-500 border-t border-white/5">
+        &copy; 2026 Nexus Gaming. Secured by Auth0 & Vercel Edge.
+    </footer>
+
+    <script type="module" src="/js/auth.js"></script>
+</body>
+</html>

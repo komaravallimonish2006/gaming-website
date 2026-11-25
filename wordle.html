@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Codeword Matrix | Nexus Gaming</title>
+    <meta name="description" content="Play Wordle Codeword Matrix online. Deduce the hidden 5-letter codeword in 6 attempts with real-time letter feedback.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Wordle Codeword Matrix | Nexus Gaming">
+    <meta property="og:description" content="Deduce the 5-letter hidden codeword in 6 attempts.">
+    <meta property="og:image" content="/images/wordle.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/games.css">
+    <style>
+        .wordle-grid {
+            display: grid;
+            grid-template-rows: repeat(6, 1fr);
+            gap: 8px;
+            margin-bottom: 2rem;
+        }
+        .wordle-row {
+            display: grid;
+            grid-template-columns: repeat(5, 54px);
+            gap: 8px;
+        }
+        .wordle-tile {
+            width: 54px;
+            height: 54px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            background: rgba(12, 17, 40, 0.8);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            color: #ffffff;
+        }
+        .tile-correct {
+            background-color: #059669;
+            border-color: #34d399;
+            color: white;
+            box-shadow: 0 0 15px rgba(52, 211, 153, 0.4);
+        }
+        .tile-present {
+            background-color: #d97706;
+            border-color: #fbbf24;
+            color: white;
+            box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+        }
+        .tile-absent {
+            background-color: #1e293b;
+            border-color: #334155;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body class="bg-[#070b19] text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute inset-0 cyber-grid opacity-20"></div>
+        <div class="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[140px]"></div>
+    </div>
+
+    <div id="navbar-root"></div>
+    <script type="module" src="/src/navbar-mount.tsx"></script>
+
+    <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-32 pb-20">
+        <div class="game-wrapper fade-in-up flex flex-col items-center">
+            <div class="game-header text-center mb-6">
+                <span class="text-xs font-mono text-teal-400 uppercase tracking-widest block mb-1">Lexical Decryption</span>
+                <h1 class="text-3xl md:text-4xl font-black text-white">Wordle Matrix</h1>
+                <div id="status" class="status-display mt-2 font-mono text-sm px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-teal-300 inline-block">
+                    Guess the 5-letter word!
+                </div>
+            </div>
+            
+            <div class="wordle-grid" id="grid">
+                <!-- Tiles injected via JS -->
+            </div>
+
+            <div class="game-controls text-center mt-4">
+                <button id="restart-btn" class="px-8 py-3 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400 text-black font-extrabold text-sm tracking-wide hover:shadow-[0_0_25px_rgba(45,212,191,0.4)] hover:scale-105 active:scale-95 transition-all cursor-pointer">
+                    New Codeword
+                </button>
+                <p class="text-gray-400 mt-3 text-xs font-mono">Type your 5-letter guess on your keyboard and press Enter.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="relative z-10 py-6 text-center text-xs text-gray-500 border-t border-white/5">
+        &copy; 2026 Nexus Gaming. All rights reserved.
+    </footer>
+
+    <script type="module" src="/js/auth.js"></script>
+    <script type="module" src="/js/wordle.js"></script>
+</body>
+</html>

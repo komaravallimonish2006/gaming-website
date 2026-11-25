@@ -1,0 +1,99 @@
+/* =========================================
+   AUTH PAGES STYLES
+   ========================================= */
+
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem 2rem; /* padding top for navbar */
+    position: relative;
+    z-index: 2;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 3rem;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.auth-card h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(112, 0, 255, 0.5);
+}
+
+.auth-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-neon);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-group label i {
+    margin-right: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: white;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-neon);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.auth-redirect {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.auth-redirect a {
+    color: var(--primary-neon);
+    font-weight: 600;
+}
+
+.auth-redirect a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 5px var(--primary-neon);
+}
+
+.error-msg {
+    color: var(--secondary-neon);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    min-height: 20px;
+}

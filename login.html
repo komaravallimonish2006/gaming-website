@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | Nexus Gaming - Zero-Trust Auth0 Hub</title>
+    <meta name="description" content="Securely log in to your Nexus Gaming profile. Access your cloud saves, high scores, and exclusive multiplayer retro arenas with Auth0.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Log In | Nexus Gaming">
+    <meta property="og:description" content="Access your high scores and retro arcade games with Auth0 enterprise security.">
+    <meta property="og:image" content="/images/og-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/images/og-preview.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body class="bg-[#070b19] text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
+    <!-- Futuristic Ambient Background -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute inset-0 cyber-grid opacity-20"></div>
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <!-- Navigation Root (Mounted by React + Auth0) -->
+    <div id="navbar-root"></div>
+    <script type="module" src="/src/navbar-mount.tsx"></script>
+
+    <!-- Main Auth Form -->
+    <main class="relative z-10 flex-1 flex items-center justify-center px-4 py-24">
+        <div class="max-w-md w-full bg-[#0c1128]/85 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 shadow-[0_0_80px_rgba(0,0,0,0.8)]">
+            
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-blue/10 border border-accent-blue/20 text-accent-blue text-xs font-mono uppercase tracking-wider mb-4">
+                    <i class="fa-solid fa-shield-halved"></i> Auth0 Protected Identity
+                </div>
+                <h1 class="text-3xl font-black tracking-tight text-white mb-2">Welcome Back</h1>
+                <p class="text-sm text-gray-400">Authenticate your session to access the game arena</p>
+            </div>
+
+            <!-- Error Notification Placeholder -->
+            <div id="login-error" class="hidden p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 text-xs text-center mb-5 font-mono"></div>
+
+            <form id="login-form" class="space-y-4">
+                <!-- Honeypot field for bot protection -->
+                <input type="text" name="nexus_security_trap" style="display:none;" tabindex="-1" autocomplete="off">
+
+                <div>
+                    <label for="username" class="block text-xs font-mono uppercase text-gray-300 mb-2">
+                        <i class="fa-solid fa-user-astronaut text-accent-blue mr-1.5"></i> Operative Handle / Username
+                    </label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        placeholder="Enter your handle" 
+                        required 
+                        autocomplete="username"
+                        class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all text-sm"
+                    >
+                </div>
+
+                <div>
+                    <label for="password" class="block text-xs font-mono uppercase text-gray-300 mb-2">
+                        <i class="fa-solid fa-key text-accent-blue mr-1.5"></i> Access Key / Password
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        placeholder="••••••••••••" 
+                        required 
+                        autocomplete="current-password"
+                        class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all text-sm"
+                    >
+                </div>
+
+                <button 
+                    type="submit" 
+                    class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-accent-blue to-cyan-400 text-black font-extrabold text-sm tracking-wide hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer mt-2"
+                >
+                    Log In to Terminal <i class="fa-solid fa-right-to-bracket ml-1"></i>
+                </button>
+            </form>
+
+            <div class="relative my-6 text-center">
+                <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-white/10"></div></div>
+                <span class="relative px-3 bg-[#0c1128] text-xs font-mono uppercase text-gray-500">or</span>
+            </div>
+
+            <!-- Single Sign-On / Guest Quick Access -->
+            <div class="space-y-2">
+                <button 
+                    type="button"
+                    onclick="document.getElementById('username').value='GuestOperative'; document.getElementById('password').value='demo123'; document.getElementById('login-form').dispatchEvent(new Event('submit'));"
+                    class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-gray-300 hover:text-white transition-all flex items-center justify-center gap-2 cursor-pointer"
+                >
+                    <i class="fa-solid fa-bolt text-amber-400"></i> Fast Play as Guest Operative
+                </button>
+            </div>
+
+            <p class="text-center text-xs text-gray-400 mt-6">
+                Need a new account? <a href="/register.html" class="text-accent-blue hover:underline font-bold">Register free</a>
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer Copyright -->
+    <footer class="relative z-10 py-6 text-center text-xs text-gray-500 border-t border-white/5">
+        &copy; 2026 Nexus Gaming. Secured by Auth0 & Vercel Edge.
+    </footer>
+
+    <script type="module" src="/js/auth.js"></script>
+</body>
+</html>

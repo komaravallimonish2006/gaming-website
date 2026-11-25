@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match Glyphs | Nexus Gaming</title>
+    <meta name="description" content="Test your spatial recall with Cyber Memory Match. Flip neon cards, match paired symbols, and record your fewest moves.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Memory Match Glyphs | Nexus Gaming">
+    <meta property="og:description" content="Flip cards and discover matching pairs in the memory matrix.">
+    <meta property="og:image" content="/images/memory.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/games.css">
+    <style>
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 76px);
+            grid-template-rows: repeat(4, 76px);
+            gap: 12px;
+            background: rgba(12, 17, 40, 0.85);
+            padding: 16px;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 50px rgba(244, 114, 182, 0.15);
+        }
+        .memory-card {
+            width: 76px;
+            height: 76px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.4s ease;
+            cursor: pointer;
+        }
+        .memory-card.flip {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .card-front {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1.5px solid rgba(0, 240, 255, 0.4);
+        }
+        .card-back {
+            background: #0f172a;
+            transform: rotateY(180deg);
+            border: 1.5px solid rgba(244, 114, 182, 0.6);
+        }
+        .card-front i {
+            color: #00f0ff;
+            text-shadow: 0 0 10px #00f0ff;
+        }
+    </style>
+</head>
+<body class="bg-[#070b19] text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute inset-0 cyber-grid opacity-20"></div>
+        <div class="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-pink-500/10 rounded-full blur-[140px]"></div>
+    </div>
+
+    <div id="navbar-root"></div>
+    <script type="module" src="/src/navbar-mount.tsx"></script>
+
+    <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-32 pb-20">
+        <div class="game-wrapper fade-in-up flex flex-col items-center">
+            <div class="game-header text-center mb-6">
+                <span class="text-xs font-mono text-pink-400 uppercase tracking-widest block mb-1">Cognitive Recall</span>
+                <h1 class="text-3xl md:text-4xl font-black text-white">Memory Match</h1>
+                <div id="status" class="status-display mt-2 font-mono text-sm px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-pink-300 inline-block">
+                    Moves: <span id="moves" class="font-bold text-white">0</span>
+                </div>
+            </div>
+            
+            <div class="memory-grid" id="memory-grid">
+                <!-- Cards injected via JS -->
+            </div>
+
+            <div class="game-controls text-center mt-6">
+                <button id="restart-btn" class="px-8 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-extrabold text-sm tracking-wide hover:shadow-[0_0_25px_rgba(244,114,182,0.4)] hover:scale-105 active:scale-95 transition-all cursor-pointer">
+                    Reset Matrix
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="relative z-10 py-6 text-center text-xs text-gray-500 border-t border-white/5">
+        &copy; 2026 Nexus Gaming. All rights reserved.
+    </footer>
+
+    <script type="module" src="/js/auth.js"></script>
+    <script type="module" src="/js/memory.js"></script>
+</body>
+</html>

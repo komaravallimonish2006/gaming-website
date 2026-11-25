@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Nexus Gaming | Vision & Architecture</title>
+    <meta name="description" content="Meet the creator and architecture behind Nexus Gaming. Built for 60 FPS zero-latency web gaming with modern cyber aesthetics and Auth0 security.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About | Nexus Gaming">
+    <meta property="og:description" content="The vision behind Nexus Gaming: bringing native-feeling retro gaming to the modern web.">
+    <meta property="og:image" content="/images/og-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/images/og-preview.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-[#070b19] text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
+    <!-- Futuristic Ambient Background -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute inset-0 cyber-grid opacity-20"></div>
+        <div class="absolute top-1/4 right-1/4 w-[450px] h-[450px] bg-accent-blue/10 rounded-full blur-[140px]"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-[450px] h-[450px] bg-purple-600/10 rounded-full blur-[140px]"></div>
+    </div>
+
+    <!-- Navigation Root -->
+    <div id="navbar-root"></div>
+    <script type="module" src="/src/navbar-mount.tsx"></script>
+
+    <!-- Main About Content -->
+    <main class="relative z-10 flex-1 flex items-center justify-center px-4 py-32">
+        <div class="max-w-2xl w-full bg-[#0c1128]/85 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-[0_0_80px_rgba(0,0,0,0.8)] text-center">
+            
+            <!-- Creator Avatar Icon -->
+            <div class="w-24 h-24 mx-auto mb-6 rounded-3xl bg-gradient-to-tr from-accent-blue via-cyan-400 to-purple-600 p-0.5 shadow-[0_0_40px_rgba(0,240,255,0.4)]">
+                <div class="w-full h-full bg-[#070b19] rounded-[22px] flex items-center justify-center text-accent-blue text-4xl">
+                    <i class="fa-solid fa-user-astronaut"></i>
+                </div>
+            </div>
+
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent-blue/10 border border-accent-blue/20 text-accent-blue text-xs font-mono uppercase tracking-widest mb-4">
+                Platform Architecture
+            </div>
+
+            <h1 class="text-3xl md:text-5xl font-black text-white mb-2">K. Monish</h1>
+            <h2 class="text-sm md:text-base font-mono uppercase tracking-wider text-cyan-300 mb-6">Creator & Lead Architect</h2>
+
+            <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 font-light">
+                Welcome to Nexus Gaming. I engineered this platform to bridge timeless retro arcade mechanics with cutting-edge web performance. Every game in the terminal runs on direct HTML5 Canvas loops for instant, zero-latency feedback without bloated ad trackers or paywalls.
+            </p>
+
+            <p class="text-gray-400 text-xs md:text-sm leading-relaxed mb-8 font-light">
+                Built with modern React, Tailwind CSS, hardware-accelerated animations, and Auth0 identity security for cloud session synchronization across devices.
+            </p>
+
+            <!-- Metrics -->
+            <div class="grid grid-cols-3 gap-4 border-y border-white/10 py-6 mb-8 text-center">
+                <div>
+                    <span class="block text-2xl font-black text-white">10+</span>
+                    <span class="text-[11px] font-mono text-gray-400 uppercase">Games Built</span>
+                </div>
+                <div>
+                    <span class="block text-2xl font-black text-emerald-400">60 FPS</span>
+                    <span class="text-[11px] font-mono text-gray-400 uppercase">Direct Canvas</span>
+                </div>
+                <div>
+                    <span class="block text-2xl font-black text-accent-blue">100%</span>
+                    <span class="text-[11px] font-mono text-gray-400 uppercase">Free to Play</span>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center justify-center gap-4">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition-all hover:scale-105" aria-label="GitHub">
+                    <i class="fa-brands fa-github text-lg"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition-all hover:scale-105" aria-label="Twitter">
+                    <i class="fa-brands fa-x-twitter text-lg"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition-all hover:scale-105" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin text-lg"></i>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="relative z-10 py-6 text-center text-xs text-gray-500 border-t border-white/5">
+        &copy; 2026 Nexus Gaming. Secured by Auth0 & Vercel Edge.
+    </footer>
+</body>
+</html>

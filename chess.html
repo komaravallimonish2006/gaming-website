@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grandmaster Chess | Nexus Gaming</title>
+    <meta name="description" content="Play Grandmaster Chess online locally or analyze tactical moves. Zero latency board rendered with precision rule verification.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Grandmaster Chess | Nexus Gaming">
+    <meta property="og:description" content="Master tactical depth in our high-contrast cyber chess arena.">
+    <meta property="og:image" content="/images/chess.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chessboard.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/games.css">
+</head>
+<body class="bg-[#070b19] text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute inset-0 cyber-grid opacity-20"></div>
+        <div class="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[140px]"></div>
+    </div>
+
+    <div id="navbar-root"></div>
+    <script type="module" src="/src/navbar-mount.tsx"></script>
+
+    <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-32 pb-20">
+        <div class="game-wrapper fade-in-up flex flex-col items-center max-w-lg w-full">
+            <div class="game-header text-center mb-6">
+                <span class="text-xs font-mono text-purple-400 uppercase tracking-widest block mb-1">Strategy Terminal</span>
+                <h1 class="text-3xl md:text-4xl font-black text-white">Grandmaster Chess</h1>
+                <div id="status" class="status-display mt-2 font-mono text-sm px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-purple-300 inline-block">
+                    White to move
+                </div>
+            </div>
+            
+            <div class="chess-container bg-[#0c1128]/80 p-4 rounded-2xl border border-white/10 shadow-[0_0_50px_rgba(168,85,247,0.15)] w-full max-w-[420px]">
+                <div id="myBoard" style="width: 100%"></div>
+            </div>
+
+            <div class="game-controls flex items-center justify-center gap-4 text-center mt-6">
+                <button id="reset-btn" class="px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-extrabold text-sm tracking-wide hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] hover:scale-105 active:scale-95 transition-all cursor-pointer">
+                    Restart Board
+                </button>
+                <button id="undo-btn" class="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium text-sm border border-white/10 hover:scale-105 active:scale-95 transition-all cursor-pointer">
+                    Undo Move
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="relative z-10 py-6 text-center text-xs text-gray-500 border-t border-white/5">
+        &copy; 2026 Nexus Gaming. All rights reserved.
+    </footer>
+
+    <!-- External chess libs -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js" crossorigin="anonymous"></script>
+
+    <script type="module" src="/js/auth.js"></script>
+    <script type="module" src="/js/chess.js"></script>
+</body>
+</html>
